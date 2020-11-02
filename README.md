@@ -22,3 +22,11 @@ Create a script with an applicable name and create a public Animator variable an
         anim.Play([name of animation])
     }
  }
+ 
+ After writing the script, click and drag the GameObject the animation is in into the script and it will implement the animator Component automatically 
+
+## Conclusion
+
+The animation should now be playing after pressing the preferred key or entering a trigger, but note that if it does or doesn't stop, that's because the animation loop is set to true or false in the Animator component.
+
+There will be times when you need your characters to do multiple animations and this will require multiple Animator variables, but this is just how to play one animation for one of the GameObjects.
