@@ -1,12 +1,24 @@
 # Playing An Animation With Trigger or Key.md
 
-This tutorial will teach you the fundamentals of how to set up a simple animation and how to write code to play it through either a press of a key or when entering a trigger in the game.
+This tutorial will teach you how to implement an animation into a script that plays it through either a press of a key or when entering a trigger in the game.
 
-## Setting Up The Animation for the Code
+## Implementing the Animation Into the Script
 
-Every animation in Unity uses a component called **Animator**. This component is crucial because without it, the animation cannot be played or implemented into a written script. So if you haven't made an animation, you can make a simple one by going to **Windows > Animation** and the Animation panel will appear on the screen. When you click on **Create**, a window will appear where you will give the animation a name and decide where to save it in the Unity project. **Make sure you save it where you can find it again**.
-
-
-
-## Implementing Animation Into Script
-
+Create a script with an applicable name and create a public Animator variable and name it appropriately, like **anim**. Next, type the name of your Animator variable in void start and write it occordingly: anim = GetComponent<Animator>();
+ 
+ In the void Update, create an if statement and write it occordingly:
+ 
+ if (Input.GetKeyDown (KeyCode.[preffered key]))
+ {
+    anim.Play([name of the animation]);
+ }
+ 
+ If you want the animation to play after something enters a trigger, create a new void statement and write this instead:
+ 
+ void OnTriggerEnter(Collider collision)
+ {
+    if (collision.tag == "[Tag Name]")
+    {
+        anim.Play([name of animation])
+    }
+ }
